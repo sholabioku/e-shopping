@@ -1,7 +1,8 @@
 const http = require('http');
+const express = require('express');
 
-const server = http.createServer((req, res) => {
-  console.log(req.url, req.method, req.headers);
-});
+const app = express();
 
-server.listen(3000);
+const server = http.createServer(app);
+
+server.listen(3000, console.log('app connected'));
