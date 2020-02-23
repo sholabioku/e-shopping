@@ -1,1 +1,1 @@
-[{ "id": "12345", "title": "My Book", "imageUrl": "https://tse3.mm.bing.net/th?id=OIP.Q2s5YH6h9yuSAKMKZyR2nwHaEP&pid=Api&P=0&w=331&h=191", "price": "23.99" }]
+[{"id":"12345","title":"My Book","imageUrl":"https://tse3.mm.bing.net/th?id=OIP.Q2s5YH6h9yuSAKMKZyR2nwHaEP&pid=Api&P=0&w=331&h=191","price":"23.99"},{"title":"Another Book","imageUrl":"https://img.thriftbooks.com/api/images/l/7f204dbb1618a3d72c4023820aa09d8ceece0f87.jpg","price":"45.56","id":"0.5104190407490397"}]
