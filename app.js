@@ -1,23 +1,28 @@
-const path = require('path')
+const path = require('path');
 
-const express = require('express')
-const bodyParser = require('body-parser')
-const errorController = require('./controllers/error')
+const express = require('express');
+const bodyParser = require('body-parser');
+const errorController = require('./controllers/error');
+const db = require('./util/database');
 
-const app = express()
+const app = express();
 
-app.set('view engine', 'ejs')
-app.set('views', 'views')
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
-const adminRoute = require('./routes/admin')
-const shopRoutes = require('./routes/shop')
+const adminRoute = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
 
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/admin', adminRoute)
-app.use(shopRoutes)
+db.execute('SELECT * FROM products')
+  .then()
+  .catch();
 
-app.use(errorController.get404)
+app.use('/admin', adminRoute);
+app.use(shopRoutes);
 
-app.listen(3000, console.log('app connected'))
+app.use(errorController.get404);
+
+app.listen(3000, console.log('app connected'));
