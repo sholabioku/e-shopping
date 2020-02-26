@@ -16,12 +16,6 @@ const shopRoutes = require('./routes/shop');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-db.execute('SELECT * FROM products')
-  .then(result => {
-    console.log(result[0], result[1]);
-  })
-  .catch(err => console.log(err));
-
 app.use('/admin', adminRoute);
 app.use(shopRoutes);
 
