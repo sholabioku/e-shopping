@@ -75,6 +75,7 @@ app.use((error, req, res, next) => {
     pageTitle: 'Server Error!',
     path: '/500',
     isAuthenticated: req.isLoggedIn,
+  });
 });
 
 mongoose
