@@ -24,7 +24,7 @@ router.post(
       .trim(),
   ],
   isAuth,
-  adminController.postAddProduct
+  adminController.postAddProduct,
 );
 
 router.get('/edit-product/:productId', isAuth, adminController.getEditProduct);
@@ -42,7 +42,7 @@ router.post(
       .trim(),
   ],
   isAuth,
-  adminController.postEditProduct
+  adminController.postEditProduct,
 );
 
 router.delete('/product/:productId', isAuth, adminController.deleteProduct);
