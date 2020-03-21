@@ -35,9 +35,9 @@ const fileStorage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
   if (
-    file.mimetype === 'image/png' ||
-    file.mimetype === 'image/jpg' ||
-    file.mimetype === 'image/jpeg'
+    file.mimetype === 'image/png'
+    || file.mimetype === 'image/jpg'
+    || file.mimetype === 'image/jpeg'
   ) {
     cb(null, true);
   } else {
@@ -53,9 +53,7 @@ const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(
-  multer({ storage: fileStorage, fileFilter: fileFilter }).single('image')
-);
+app.use(multer({ storage: fileStorage, fileFilter }).single('image'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(
@@ -63,8 +61,8 @@ app.use(
     secret: 'my secret',
     resave: false,
     saveUninitialized: false,
-    store: store,
-  })
+    store,
+  }),
 );
 app.use(flash());
 
@@ -78,14 +76,14 @@ app.use((req, res, next) => {
     return next();
   }
   User.findById(req.session.user._id)
-    .then(user => {
+    .then((user) => {
       if (!user) {
         return next();
       }
       req.user = user;
       next();
     })
-    .catch(err => {
+    .catch((err) => {
       next(new Error(err));
     });
 });
@@ -118,7 +116,7 @@ mongoose
     useUnifiedTopology: true,
     useNewUrlParser: true,
   })
-  .then(result => {
+  .then((result) => {
     app.listen(3000, () => console.log('Database connected...'));
   })
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));

@@ -22,7 +22,7 @@ router.post(
       .isAlphanumeric()
       .trim(),
   ],
-  authController.postLogin
+  authController.postLogin,
 );
 
 router.post(
@@ -31,23 +31,20 @@ router.post(
     check('email')
       .isEmail()
       .withMessage('Please enter a valid email.')
-      .custom((value, { req }) => {
+      .custom((value, { req }) =>
         // if (value === 'test@test.com') {
         //   throw new Error('This email address if forbidden.');
         // }
         // return true;
-        return User.findOne({ email: value }).then(userDoc => {
+        User.findOne({ email: value }).then((userDoc) => {
           if (userDoc) {
-            return Promise.reject(
-              'E-Mail exists already, please pick a different one.'
-            );
+            return Promise.reject('E-Mail exists already, please pick a different one.');
           }
-        });
-      })
+        }))
       .normalizeEmail(),
     body(
       'password',
-      'Please enter a password with only numbers and text and at least 5 characters.'
+      'Please enter a password with only numbers and text and at least 5 characters.',
     )
       .isLength({ min: 5 })
       .isAlphanumeric()
@@ -61,7 +58,7 @@ router.post(
         return true;
       }),
   ],
-  authController.postSignup
+  authController.postSignup,
 );
 
 router.post('/logout', authController.postLogout);
