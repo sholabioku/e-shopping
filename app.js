@@ -15,7 +15,8 @@ const User = require('./models/user');
 
 const app = express();
 
-const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-zl7ix.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority`;
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-zl7ix.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority`
+  || `mongodb://localhost:27017/${process.env.MONGO_DEFAULT_DATABASE}`;
 const store = new MongoDBStore({
   uri: MONGODB_URI,
   collection: 'sessions',
