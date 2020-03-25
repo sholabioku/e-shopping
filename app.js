@@ -15,7 +15,7 @@ const User = require('./models/user');
 
 const app = express();
 
-const MONGODB_URI = 'mongodb://localhost:27017/shop';
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-zl7ix.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority`;
 const store = new MongoDBStore({
   uri: MONGODB_URI,
   collection: 'sessions',
@@ -117,6 +117,6 @@ mongoose
     useNewUrlParser: true,
   })
   .then((result) => {
-    app.listen(3000, () => console.log('Database connected...'));
+    app.listen(process.env.PORT || 3000, () => console.log('Database connected...'));
   })
   .catch((err) => console.log(err));
