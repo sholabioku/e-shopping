@@ -20,3 +20,8 @@
 ::1 - - [25/Mar/2020:19:13:35 +0000] "GET /js/main.js HTTP/1.1" 200 535 "https://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
 ::1 - - [25/Mar/2020:19:13:35 +0000] "GET /images/2020-03-20T08-13-04.684Zlaptop.jpeg HTTP/1.1" 200 79582 "https://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
 ::1 - - [25/Mar/2020:19:13:42 +0000] "GET /favicon.ico HTTP/1.1" 404 - "https://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
+::1 - - [25/Mar/2020:19:17:10 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
+::1 - - [25/Mar/2020:19:17:10 +0000] "GET /css/main.css HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
+::1 - - [25/Mar/2020:19:17:10 +0000] "GET /js/main.js HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
+::1 - - [25/Mar/2020:19:17:10 +0000] "GET /images/2020-03-20T08-13-04.684Zlaptop.jpeg HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
+::1 - - [25/Mar/2020:19:17:10 +0000] "GET /css/product.css HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
