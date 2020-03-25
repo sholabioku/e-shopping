@@ -134,8 +134,9 @@ mongoose
     useNewUrlParser: true,
   })
   .then((result) => {
-    https
-      .createServer({ key: privateKey, cert: certificate }, app)
-      .listen(process.env.PORT || 3000, () => console.log('Database connected...'));
+    // https
+    //   .createServer({ key: privateKey, cert: certificate }, app)
+    //   .listen(process.env.PORT || 3000, () => console.log('Database connected...'));
+    app.listen(process.env.PORT || 3000, () => console.log('Database connected...'));
   })
   .catch((err) => console.log(err));
